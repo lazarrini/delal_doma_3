@@ -46,10 +46,4 @@ async def main():
     await create_tables()
     await create_data()
 
-async def get_cheapest_room():
-    query = "SELECT name, MIN(minimal_price) FROM Hotels"
-    result = await Hotels.raw(query)
-    return result
-
 run_async(main())
-get_cheapest_room()
